@@ -5,7 +5,11 @@ export function Layout({ children }) {
   return (
     <>
       <Navbar />
-      <main>
+      <main
+        style={{
+          minHeight: 'calc(100vh - 256px)'
+        }}
+      >
         {children}
       </main>
       <Footer />
