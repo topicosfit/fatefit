@@ -1,6 +1,8 @@
 export function Footer() {
   return (
     <div className={`
+      border-t
+      border-black
       bg-slate-300
       flex
       h-32

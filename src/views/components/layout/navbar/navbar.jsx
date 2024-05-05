@@ -3,6 +3,8 @@ import { CartButton } from "./cart-button";
 export function Navbar() {
   return (
     <navbar className={`
+      border-b
+      border-black
       bg-slate-300
       flex
       h-32
