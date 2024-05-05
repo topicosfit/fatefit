@@ -1,7 +1,7 @@
 export function Footer() {
   return (
     <div className={`
-      bg-zinc-400
+      bg-slate-300
       flex
       h-32
       items-center

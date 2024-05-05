@@ -6,6 +6,9 @@ export function Layout({ children }) {
     <>
       <Navbar />
       <main
+        className={`
+        bg-slate-300
+        `}
         style={{
           minHeight: 'calc(100vh - 256px)'
         }}

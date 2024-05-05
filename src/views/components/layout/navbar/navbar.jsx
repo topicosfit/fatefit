@@ -3,7 +3,7 @@ import { CartButton } from "./cart-button";
 export function Navbar() {
   return (
     <navbar className={`
-      bg-zinc-400
+      bg-slate-300
       flex
       h-32
       items-center
