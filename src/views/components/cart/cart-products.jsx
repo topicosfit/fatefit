@@ -1,0 +1,50 @@
+export function CartProducts() {
+    return (
+        <div>
+            <div
+                className={`
+                    w-1/2
+                `}
+            >
+                <div
+                    className={`
+                        bg-black
+                        flex
+                        gap-20
+                        p-1
+                        text-white
+                        
+                    `}
+                >
+                    <div
+                        className={`
+                            flex-1
+                        `}
+                    >
+                        <p>
+                            Descrição
+                        </p>
+                    </div>
+                    <div>
+                        <p>
+                            Quantidade
+                        </p>
+                    </div>
+                    <div>
+                        <p>
+                            Preço
+                        </p>
+                    </div>
+                    <div>
+                        <p>
+                            Total
+                        </p>
+                    </div>
+                </div>
+                <div>
+                    produtos
+                </div>
+            </div>
+        </div>
+    )
+}
