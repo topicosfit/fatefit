@@ -1,7 +1,15 @@
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { Button } from "../button/button";
 
-export function Product() {
+export function Product({
+  product
+}) {
+  const {
+    id_product, 
+    st_name, 
+    st_image_url
+  } = product;
+
   return (
     <div
       className={`
@@ -18,10 +26,10 @@ export function Product() {
       `}
     >
       <div>
-        IMAGEM
+        <img src={st_image_url} />
       </div>
       <div>
-        NOME
+        {st_name}
       </div>
       <div>
         PREÇO
