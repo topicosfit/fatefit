@@ -1,25 +1,38 @@
+import { Menu } from "../../menu/menu";
 import { CartButton } from "./cart-button";
+import { SearchBar } from "./search-bar/search-bar";
+import react from '../../../../assets/react.svg'
 
 export function Navbar() {
   return (
-    <navbar className={`
-      border-b
-      border-black
-      bg-slate-300
-      flex
-      h-32
-      items-center
-      justify-between
-      p-10
-      w-full
-    `}>
-      <div>
-        LOGO
+    <navbar 
+      className={`
+        border-b
+        border-black
+        bg-slate-300
+        flex
+        flex-col
+        items-center
+        w-full
+      `}
+    >
+      <div
+        className={`
+          flex
+          items-center
+          justify-between
+          px-10
+          py-6
+          w-full
+        `}
+      >
+        <div>
+          <img src={react} height={71} width={71} />
+        </div>
+        <SearchBar />
+        <CartButton />
       </div>
-      <div>
-        Barra de pesquisa
-      </div>
-      <CartButton />
+      <Menu />
     </navbar>
   )
 }
