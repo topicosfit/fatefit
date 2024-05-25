@@ -8,6 +8,7 @@ export function Layout({ children }) {
       <main
         className={`
           bg-slate-300
+          p-10
         `}
         style={{
           minHeight: 'calc(100vh - 400px)'

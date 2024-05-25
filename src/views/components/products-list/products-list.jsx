@@ -8,7 +8,6 @@ export function ProductsList() {
                 flex
                 flex-wrap
                 gap-14
-                p-10
             `}
         >
             {products.map(product => (

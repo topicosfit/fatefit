@@ -4,7 +4,9 @@ import { Layout } from "../components/layout/layout";
 export function CartPage() {
     return (
         <Layout>
-            <CartProducts />
+            <div>
+                <CartProducts />
+            </div>
         </Layout>
     )
 }
