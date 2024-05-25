@@ -5,7 +5,7 @@ import react from '../../../../assets/react.svg'
 
 export function Navbar() {
   return (
-    <navbar 
+    <nav
       className={`
         border-b
         border-black
@@ -33,6 +33,6 @@ export function Navbar() {
         <CartButton />
       </div>
       <Menu />
-    </navbar>
+    </nav>
   )
 }
