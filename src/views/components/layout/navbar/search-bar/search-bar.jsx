@@ -28,7 +28,7 @@ export function SearchBar() {
                 `}
             >
                 <AiOutlineSearch 
-                    color="yellow"
+                    color="white"
                     size={20}                    
                 />
             </div>
