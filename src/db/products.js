@@ -6,7 +6,7 @@ export const products = [
         "st_name": "Halter 5kg",
         "st_image_url": anilha,
         "st_description": "",
-        "nm_price": 50,
+        "nm_price": 500,
     },
     {
         "id_product": 1,

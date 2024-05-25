@@ -1,11 +1,13 @@
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { Button } from "../button/button";
+import { formatPrice } from "../../utils/format-price";
 
 export function Product({
   product
 }) {
   const {
     id_product, 
+    nm_price, 
     st_name, 
     st_image_url
   } = product;
@@ -13,6 +15,7 @@ export function Product({
   return (
     <div
       className={`
+        bg-white 
         border
         border-black
         flex
@@ -29,10 +32,16 @@ export function Product({
         <img src={st_image_url} />
       </div>
       <div>
-        {st_name}
+        <span>
+          {st_name}
+        </span>
       </div>
       <div>
-        PREÇO
+        <span className={`
+          text-yellow-600
+        `}>
+          {formatPrice(nm_price)}
+        </span>
       </div>
       <div>
         <Button 
