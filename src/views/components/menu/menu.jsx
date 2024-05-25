@@ -1,4 +1,4 @@
-import categories from '../../../db/categories.json';
+import { categories } from '../../../db/categories';
 
 export function Menu() {
 

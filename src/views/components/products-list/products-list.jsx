@@ -1,5 +1,5 @@
 import { Product } from "../product/product";
-import products from "../../../db/products.json";
+import { products } from "../../../db/products";
 
 export function ProductsList() {
     return (
