@@ -2,8 +2,11 @@ import { Menu } from "../../menu/menu";
 import { CartButton } from "./cart-button";
 import { SearchBar } from "./search-bar/search-bar";
 import react from '../../../../assets/react.svg'
+import { useNavigate } from "react-router-dom";
 
 export function Navbar() {
+  const navigate = useNavigate();
+
   return (
     <nav
       className={`
@@ -26,7 +29,10 @@ export function Navbar() {
           w-full
         `}
       >
-        <div>
+        <div 
+          className="cursor-pointer"
+          onClick={() => navigate('/')}
+        >
           <img src={react} height={71} width={71} />
         </div>
         <SearchBar />
