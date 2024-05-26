@@ -1,7 +1,10 @@
 import { Product } from "../product/product";
-import { products } from "../../../db/products";
+import { useProducts } from "../../../app/context/products/products-context-hook";
+import { Loading } from "../loading/loading";
 
 export function ProductsList() {
+    const { isProductsLoading, productsList } = useProducts();
+
     return (
         <div
             className={`
@@ -10,12 +13,16 @@ export function ProductsList() {
                 gap-14
             `}
         >
-            {products.map(product => (
-                <Product 
-                    key={product.id_product} 
-                    product={product} 
-                />
-            ))}
+            {isProductsLoading ? (
+                <Loading height="24px" width="24px" />
+            ) : (
+                productsList.map(product => (
+                    <Product 
+                        key={product.id_product} 
+                        product={product} 
+                    />
+                ))
+            )}
         </div>
     )
 }
