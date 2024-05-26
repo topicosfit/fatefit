@@ -6,6 +6,9 @@ export default {
   ],
   theme: {
     extend: {
+      colors: {
+        seagreen: '#42AD60', 
+      }, 
       animation: {
         spin: 'spin 2s linear infinite',
       },

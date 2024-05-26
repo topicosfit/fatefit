@@ -11,6 +11,7 @@ export function Loading({ height, width }) {
         className="
           animate-spin
           border-2
+          border-t-seagreen
           rounded-full
         "
         style={{
