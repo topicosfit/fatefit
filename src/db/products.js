@@ -2,46 +2,83 @@ import anilha from "../assets/products/anilha.webp";
 
 export const products = [
     {
+        "category": "",
         "id_product": 1,
-        "st_name": "Halter 5kg",
-        "st_image_url": anilha,
-        "st_description": "",
         "nm_price": 500,
-    },
-    {
-        "id_product": 1,
-        "st_name": "Barra Olímpica",
         "st_description": "",
-        "nm_price": 5075,
+        "st_image_url": anilha,
+        "st_name": "Anilha 5kg"
     },
     {
-        "id_product": 1,
-        "st_name": "Teu pai",
-        "st_description": "Luva de treino",
-        "nm_price": 50000,
+        "category": "",
+        "id_product": 2,
+        "nm_price": 500,
+        "st_description": "",
+        "st_image_url": anilha,
+        "st_name": "Anilha 5kg"
     },
     {
-        "id_product": 1,
-        "st_name": "",
-        "st_description": "Corda",
-        "nm_price": 0,
+        "category": "",
+        "id_product": 3,
+        "nm_price": 500,
+        "st_description": "",
+        "st_image_url": anilha,
+        "st_name": "Anilha 5kg"
     },
     {
-        "id_product": 1,
-        "st_name": "",
-        "st_description": "Corda",
-        "nm_price": 0,
+        "category": "",
+        "id_product": 4,
+        "nm_price": 500,
+        "st_description": "",
+        "st_image_url": anilha,
+        "st_name": "Anilha 5kg"
     },
     {
-        "id_product": 1,
-        "st_name": "",
-        "st_description": "Corda",
-        "nm_price": 0,
+        "category": "",
+        "id_product": 5,
+        "nm_price": 500,
+        "st_description": "",
+        "st_image_url": anilha,
+        "st_name": "Anilha 5kg"
     },
     {
-        "id_product": 1,
-        "st_name": "",
-        "st_description": "Corda",
-        "nm_price": 0,
+        "category": "",
+        "id_product": 6,
+        "nm_price": 500,
+        "st_description": "",
+        "st_image_url": anilha,
+        "st_name": "Anilha 5kg"
+    },
+    {
+        "category": "",
+        "id_product": 7,
+        "nm_price": 500,
+        "st_description": "",
+        "st_image_url": anilha,
+        "st_name": "Anilha 5kg"
+    },
+    {
+        "category": "",
+        "id_product": 8,
+        "nm_price": 500,
+        "st_description": "",
+        "st_image_url": anilha,
+        "st_name": "Anilha 5kg"
+    },
+    {
+        "category": "",
+        "id_product": 9,
+        "nm_price": 500,
+        "st_description": "",
+        "st_image_url": anilha,
+        "st_name": "Anilha 5kg"
+    },
+    {
+        "category": "",
+        "id_product": 10,
+        "nm_price": 500,
+        "st_description": "",
+        "st_image_url": anilha,
+        "st_name": "Anilha 5kg"
     }
 ]
