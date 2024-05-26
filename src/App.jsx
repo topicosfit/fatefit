@@ -1,9 +1,8 @@
-import { CartPage } from './views/pages/cart'
-import { Home } from './views/pages/home'
+import { AppRouter } from "./app/router/router"
 
 function App() {
   return (
-    <CartPage />
+    <AppRouter />
   )
 }
 
