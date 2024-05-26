@@ -11,7 +11,10 @@ export function ProductsList() {
             `}
         >
             {products.map(product => (
-                <Product product={product} />
+                <Product 
+                    key={product.id_product} 
+                    product={product} 
+                />
             ))}
         </div>
     )

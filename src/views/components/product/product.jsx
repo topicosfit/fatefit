@@ -1,16 +1,18 @@
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { Button } from "../button/button";
 import { formatPrice } from "../../utils/format-price";
+import { useCart } from "../../../app/context/cart/cart-context-hook";
 
 export function Product({
   product
 }) {
   const {
-    id_product, 
     nm_price, 
     st_name, 
     st_image_url
   } = product;
+
+  const { addProductToCart, isCartLoading } = useCart();
 
   return (
     <div
@@ -43,14 +45,17 @@ export function Product({
           {formatPrice(nm_price)}
         </span>
       </div>
-      <div>
+      <div className="flex justify-center w-full">
         <Button 
           background="#42AD60"
+          disabled={isCartLoading}
           icon={
             <AiOutlineShoppingCart 
               color="white" 
             />
           }
+          loading={isCartLoading}
+          onClick={() => addProductToCart(product)}
           text="Comprar"
           textColor="white"
         />
