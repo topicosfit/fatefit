@@ -1,8 +1,9 @@
 import { useCart } from '../../../app/context/cart/cart-context-hook';
 import { formatPrice } from '../../utils/format-price';
+import { AiFillDelete } from "react-icons/ai";
 
 export function CartProducts() {
-    const { cart } = useCart();
+    const { cart, removeProductFromCart } = useCart();
 
     return (
         <div className="w-5/6">
@@ -16,6 +17,7 @@ export function CartProducts() {
                         <th className="py-2 px-4">Quantidade</th>
                         <th className="py-2 px-4">Preço</th>
                         <th className="py-2 px-4">Total</th>
+                        <th className="py-2 px-4"></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -34,9 +36,39 @@ export function CartProducts() {
                                         {item.st_name}
                                     </span>
                                 </td>
-                                <td className="py-2 px-4 text-center">{1}</td>
-                                <td className="py-2 px-4 text-center text-yellow-600">{formatPrice(item.nm_price)}</td>
-                                <td className="py-2 px-4 text-center text-yellow-600">{formatPrice(item.nm_price)}</td>
+                                <td className="
+                                    py-2 
+                                    px-4 
+                                    text-center
+                                ">
+                                    {1}
+                                </td>
+                                <td className="
+                                    py-2 
+                                    px-4 
+                                    text-center 
+                                    text-yellow-600
+                                ">
+                                    {formatPrice(item.nm_price)}
+                                </td>
+                                <td className="
+                                    py-2 
+                                    px-4 
+                                    text-center 
+                                    text-yellow-600
+                                ">
+                                    {formatPrice(item.nm_price * item.quantity)}
+                                </td>
+                                <td className="
+                                        cursor-pointer 
+                                        py-2 
+                                        px-4 
+                                        text-center
+                                    "
+                                    onClick={() => removeProductFromCart(item.id_product)}
+                                >
+                                    <AiFillDelete size={24} />
+                                </td>
                             </tr>
                         ))
                     ) : (

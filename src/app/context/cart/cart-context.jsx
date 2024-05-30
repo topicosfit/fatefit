@@ -43,13 +43,26 @@ export function CartProvider({ children }) {
 
     handleIsCartLoading();
   };
-  
+
+  function removeProductFromCart(id) {
+    handleIsCartLoading();
+    const updatedCart = [...cart.products].filter(product => product.id_product != id);
+
+    const updatedTotal = updatedCart.reduce((prev, current) => prev + (current.nm_price * current.quantity), 0);
+
+    setCart({
+      products: updatedCart, 
+      total: updatedTotal, 
+    });
+    handleIsCartLoading();
+  }  
 
   return (
     <CartContext.Provider value={{
       cart, 
       addProductToCart, 
       isCartLoading, 
+      removeProductFromCart, 
     }}>
       {children}
     </CartContext.Provider>
