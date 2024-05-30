@@ -1,6 +1,10 @@
+import { useCart } from "../../../app/context/cart/cart-context-hook";
+import { formatPrice } from "../../utils/format-price";
 import { Button } from "../button/button";
 
 export function CartTotal()  {
+  const { cart } = useCart();
+
   return (
     <div className="      
       flex
@@ -18,7 +22,7 @@ export function CartTotal()  {
           Total
         </span>
         <span className="text-yellow-600">
-          R$ 300,00
+          {formatPrice(cart.total)}
         </span>
       </div>
       <div className="border border-black p-2 flex justify-center">
