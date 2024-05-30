@@ -1,10 +1,7 @@
 import { ProductCard } from "../product-card/product-card";
-import { useProducts } from "../../../app/context/products/products-context-hook";
 import { Loading } from "../loading/loading";
 
-export function ProductsList() {
-    const { isProductsLoading, productsList } = useProducts();
-
+export function ProductsList({ loading, products }) {
     return (
         <div
             className={`
@@ -13,10 +10,10 @@ export function ProductsList() {
                 gap-14
             `}
         >
-            {isProductsLoading ? (
+            {loading ? (
                 <Loading height="24px" width="24px" />
             ) : (
-                productsList.map(product => (
+                products.map(product => (
                     <ProductCard 
                         key={product.id_product} 
                         product={product} 

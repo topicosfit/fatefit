@@ -1,8 +1,12 @@
+import { useNavigate } from 'react-router-dom';
 import { categories } from '../../../db/categories';
 
 export function Menu() {
+    const navigate = useNavigate();
 
-    function handleCategoryClick() {}
+    function handleCategoryClick(category) {
+        navigate(`/${category}`)
+    }
 
     return (
         <ul
@@ -23,8 +27,9 @@ export function Menu() {
                         cursor-pointer
                     `}
                     key={category.id_category}
+                    onClick={() => handleCategoryClick(category.st_name)}
                 >
-                    {category.st_name}
+                    {category.st_name.toUpperCase()}
                 </li>
             ))}
         </ul>
