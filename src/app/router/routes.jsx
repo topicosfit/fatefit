@@ -1,5 +1,6 @@
 import { HomePage } from '../../views/pages/home-page';
 import { CartPage } from '../../views/pages/cart-page';
+import { ProductPage } from '../../views/pages/product-page';
 
 export const routes = [
   {
@@ -8,7 +9,7 @@ export const routes = [
   },
   {
     path: "/product/:productId",
-    element: <></>,
+    element: <ProductPage />,
   },
   {
     path: "/cart",

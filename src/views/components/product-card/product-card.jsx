@@ -2,21 +2,24 @@ import { AiOutlineShoppingCart } from "react-icons/ai";
 import { Button } from "../button/button";
 import { formatPrice } from "../../utils/format-price";
 import { useCart } from "../../../app/context/cart/cart-context-hook";
+import { useNavigate } from "react-router-dom";
 
 export function ProductCard({
   product
 }) {
   const {
+    id_product, 
     nm_price, 
     st_name, 
     st_image_url
   } = product;
 
   const { addProductToCart, isCartLoading } = useCart();
+  const navigate = useNavigate();
 
   return (
     <div
-      className={`
+      className="
         bg-white 
         border
         border-black
@@ -28,9 +31,15 @@ export function ProductCard({
         p-4
         rounded-lg
         w-48
-      `}
+      "
     >
-      <div>
+      <div className="
+          cursor-pointer
+        " 
+        onClick={() => navigate(`/product/${id_product}`, {
+          state: product
+        })}
+      >
         <img src={st_image_url} />
       </div>
       <div>
@@ -39,13 +48,17 @@ export function ProductCard({
         </span>
       </div>
       <div>
-        <span className={`
+        <span className="
           text-yellow-600
-        `}>
+        ">
           {formatPrice(nm_price)}
         </span>
       </div>
-      <div className="flex justify-center w-full">
+      <div className="
+        flex 
+        justify-center 
+        w-full
+      ">
         <Button 
           background="#42AD60"
           disabled={isCartLoading}
