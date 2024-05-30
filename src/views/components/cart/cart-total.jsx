@@ -1,9 +1,11 @@
+import { useNavigate } from "react-router-dom";
 import { useCart } from "../../../app/context/cart/cart-context-hook";
 import { formatPrice } from "../../utils/format-price";
 import { Button } from "../button/button";
 
 export function CartTotal()  {
   const { cart } = useCart();
+  const navigate = useNavigate();
 
   return (
     <div className="      
@@ -26,7 +28,7 @@ export function CartTotal()  {
         </span>
       </div>
       <div className="border border-black p-2 flex justify-center">
-        <Button background="#42AD60" text="FINALIZAR COMPRA" textColor="white" />
+        <Button background="#42AD60" disabled={cart.products.length <= 0} onClick={() => navigate('/checkout')} text="FINALIZAR COMPRA" textColor="white" />
       </div>
     </div>
   )
