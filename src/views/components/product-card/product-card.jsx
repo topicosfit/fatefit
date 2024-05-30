@@ -3,7 +3,7 @@ import { Button } from "../button/button";
 import { formatPrice } from "../../utils/format-price";
 import { useCart } from "../../../app/context/cart/cart-context-hook";
 
-export function Product({
+export function ProductCard({
   product
 }) {
   const {

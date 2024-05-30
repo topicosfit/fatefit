@@ -1,4 +1,4 @@
-import { Product } from "../product/product";
+import { ProductCard } from "../product-card/product-card";
 import { useProducts } from "../../../app/context/products/products-context-hook";
 import { Loading } from "../loading/loading";
 
@@ -17,7 +17,7 @@ export function ProductsList() {
                 <Loading height="24px" width="24px" />
             ) : (
                 productsList.map(product => (
-                    <Product 
+                    <ProductCard 
                         key={product.id_product} 
                         product={product} 
                     />
