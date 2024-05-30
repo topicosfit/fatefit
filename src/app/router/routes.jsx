@@ -2,6 +2,7 @@ import { HomePage } from '../../views/pages/home-page';
 import { CartPage } from '../../views/pages/cart-page';
 import { ProductPage } from '../../views/pages/product-page';
 import { CategoryPage } from '../../views/pages/category-page';
+import { CheckoutPage } from '../../views/pages/checkout-page';
 
 export const routes = [
   {
@@ -22,6 +23,6 @@ export const routes = [
   },
   {
     path: "/checkout",
-    element: <></>,
+    element: <CheckoutPage />,
   },
 ];
