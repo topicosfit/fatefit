@@ -7,7 +7,8 @@ export function Button({
   loading = false, 
   onClick, 
   text, 
-  textColor 
+  textColor, 
+  type = "button", 
 }) {
   return (
     <button
@@ -25,6 +26,7 @@ export function Button({
       style={{
         backgroundColor: background,
       }}
+      type={type}
     >
       {loading ? (
         <Loading height="24px" width="24px" />
