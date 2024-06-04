@@ -1,6 +1,6 @@
 import { Input } from "../../form/input";
 
-export function AddressInfo({ register })  {
+export function AddressInfo({ errors, register })  {
   return (
     <div className="
       border
@@ -24,6 +24,7 @@ export function AddressInfo({ register })  {
         p-2
       ">
         <Input 
+          errors={errors}
           label="Logradouro" 
           name="address"
           placeholder="Insira seu logradouro" 
@@ -34,6 +35,7 @@ export function AddressInfo({ register })  {
         p-2
       ">
         <Input 
+          errors={errors}
           label="Número" 
           name="number"
           placeholder="Insira seu número" 
@@ -44,6 +46,7 @@ export function AddressInfo({ register })  {
         p-2
       ">
         <Input 
+          errors={errors}
           label="Bairro" 
           name="neighborhood"
           placeholder="Insira seu bairro" 
@@ -54,6 +57,7 @@ export function AddressInfo({ register })  {
         p-2
       ">
         <Input 
+          errors={errors}
           label="Cidade" 
           name="city"
           placeholder="Insira sua cidade" 
@@ -64,6 +68,7 @@ export function AddressInfo({ register })  {
         p-2
       ">
         <Input 
+          errors={errors}
           label="Estado" 
           name="state"
           placeholder="Insira seu estado" 

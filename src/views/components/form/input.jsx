@@ -1,4 +1,4 @@
-export function Input({ label, name, placeholder, register }) {
+export function Input({ errors, label, name, placeholder, register }) {
   return (
     <div className="
       flex
@@ -11,19 +11,25 @@ export function Input({ label, name, placeholder, register }) {
         flex
         rounded-md
         p-1.5
-        w-52
+        w-72
       ">
         <input
           className="
             p-0.5
           "
           placeholder={placeholder}
-          {...register(name)}
+          {...register(name, { required: "Este campo é obrigatório" })}
           style={{
-            all: 'unset'
+            all: 'unset', 
+            width: '100%'
           }}
         />
       </div>
+      {errors && errors[name] && (
+        <span style={{
+          color: 'red'
+        }}>{errors[name].message}</span>
+      )}
     </div>
   )
 }

@@ -14,18 +14,32 @@ export function CartTotal()  {
       w-1/6
     ">
       <div className="
-        bg-black
-        flex
-        justify-between        
+        bg-black    
         p-2
         w-full
       ">
-        <span className="text-white">
-          Total
-        </span>
-        <span className="text-yellow-600">
-          {formatPrice(cart.total)}
-        </span>
+        <div className="
+          flex
+          justify-between
+        ">
+          <span className="text-white">
+            Total
+          </span>
+          <span className="text-yellow-600">
+            {formatPrice(cart.total)}
+          </span>
+        </div>
+        <div className="
+          flex
+          justify-between
+        ">
+          <span className="text-white">
+            Entrega
+          </span>
+          <span className="text-yellow-600">
+            {formatPrice(2000)}
+          </span>
+        </div>
       </div>
       <div className="border border-black p-2 flex justify-center">
         <Button background="#42AD60" disabled={cart.products.length <= 0} onClick={() => navigate('/checkout')} text="FINALIZAR COMPRA" textColor="white" />

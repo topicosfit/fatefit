@@ -1,6 +1,6 @@
 import { Input } from "../../form/input";
 
-export function PersonalInfo({ register })  {
+export function PersonalInfo({ errors, register })  {
   return (
     <div className="
       border
@@ -24,6 +24,7 @@ export function PersonalInfo({ register })  {
         p-2
       ">
         <Input 
+          errors={errors}
           label="Nome Completo" 
           name="name"
           placeholder="Insira seu nome" 
@@ -34,6 +35,7 @@ export function PersonalInfo({ register })  {
         p-2
       ">
         <Input 
+          errors={errors}
           label="CPF" 
           name="cpf"
           placeholder="Insira seu CPF" 
@@ -44,6 +46,7 @@ export function PersonalInfo({ register })  {
         p-2
       ">
         <Input 
+          errors={errors}
           label="E-mail" 
           name="email"
           placeholder="Insira seu e-mail" 
@@ -54,6 +57,7 @@ export function PersonalInfo({ register })  {
         p-2
       ">
         <Input 
+          errors={errors}
           label="Celular" 
           name="phone"
           placeholder="Insira seu celular" 

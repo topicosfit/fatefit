@@ -11,6 +11,7 @@ export function CheckoutForm() {
   const { clearCart } = useCart();
 
   const {
+    formState: { errors }, 
     handleSubmit, 
     register, 
     reset, 
@@ -38,15 +39,15 @@ export function CheckoutForm() {
           flex
           gap-8
         ">
-          <PersonalInfo register={register} />
-          <AddressInfo register={register} />
+          <PersonalInfo errors={errors} register={register} />
+          <AddressInfo errors={errors} register={register} />
         </div>
         <div className="
           flex
           flex-col
           gap-8
         ">
-          <PaymentInfo />
+          <PaymentInfo errors={errors} register={register} />
           <div className="flex justify-center">
             <Button 
               background="#42AD60" 
