@@ -57,9 +57,17 @@ export function CartProvider({ children }) {
     handleIsCartLoading();
   }  
 
+  function clearCart() {
+    setCart({
+      products: [], 
+      total: 0, 
+    })
+  }
+
   return (
     <CartContext.Provider value={{
       cart, 
+      clearCart, 
       addProductToCart, 
       isCartLoading, 
       removeProductFromCart, 
