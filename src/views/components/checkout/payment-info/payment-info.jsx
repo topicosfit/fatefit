@@ -1,8 +1,22 @@
 import { useState } from "react";
 import { Input } from "../../form/input";
+import { useCart } from "../../../../app/context/cart/cart-context-hook";
+import { formatPrice } from "../../../utils/format-price";
+import { DateSelect } from "../../form/date";
 
 export function PaymentInfo({ errors, register })  {
+  const { cart } = useCart();
   const [selected, setSelected] = useState('');
+
+  const generateParcelas = (total) => {
+    const parcelas = [];
+
+    for (let index = 1; index <= 12; index++) {
+      parcelas.push(`${index}x de ${formatPrice(total / index)}`);      
+    }
+
+    return parcelas;
+  }
 
   return (
     <div className=" 
@@ -74,6 +88,30 @@ export function PaymentInfo({ errors, register })  {
               placeholder="Insira o código de segurança" 
               register={register} 
             />
+          </div>
+          <div className="
+            p-2
+            w-80
+          ">
+            <DateSelect />
+          </div>
+          <div className="
+            flex
+            flex-col
+            gap-2
+            p-2
+            w-80
+          ">
+            <label>Parcelamento</label>
+            <select name="parcelas" id="parcelas">
+              {
+                generateParcelas(cart.total).map(parcela => (
+                <option value="parcela">
+                  {parcela}
+                </option>
+                ))
+              }
+            </select>
           </div>
         </div>
       )}
