@@ -48,7 +48,7 @@ export function CheckoutForm() {
           gap-8
         ">
           <PaymentInfo errors={errors} register={register} />
-          <div className="flex justify-center">
+          <div className="flex justify-center w-52">
             <Button 
               background="#42AD60" 
               text="FINALIZAR" 
