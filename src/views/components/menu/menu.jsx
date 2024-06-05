@@ -25,6 +25,7 @@ export function Menu() {
                 <li 
                     className={`
                         cursor-pointer
+                        font-bold
                     `}
                     key={category.id_category}
                     onClick={() => handleCategoryClick(category.st_name)}
