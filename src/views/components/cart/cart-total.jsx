@@ -37,7 +37,7 @@ export function CartTotal()  {
             Entrega
           </span>
           <span className="text-yellow-600">
-            {formatPrice(2000)}
+            {cart.products.length > 0 ? formatPrice(2000) : formatPrice(0)}
           </span>
         </div>
       </div>
