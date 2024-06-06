@@ -1,4 +1,5 @@
 import { createContext, useState } from "react"
+import { Bounce, toast } from "react-toastify";
 
 export const CartContext = createContext({
   cart: {
@@ -39,9 +40,21 @@ export function CartProvider({ children }) {
     setCart({
       products: updatedCart, 
       total: updatedTotal, 
-    });    
+    });
 
     handleIsCartLoading();
+
+    toast.success('Produto adicionado ao carrinho', {
+      position: "top-right",
+      autoClose: 2000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+      transition: Bounce,
+    });
   };
 
   function removeProductFromCart(id) {
@@ -54,14 +67,27 @@ export function CartProvider({ children }) {
       products: updatedCart, 
       total: updatedTotal, 
     });
+
     handleIsCartLoading();
+
+    toast.success('Produto removido do carrinho', {
+      position: "top-right",
+      autoClose: 2000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+      transition: Bounce,
+    });
   }  
 
   function clearCart() {
     setCart({
       products: [], 
       total: 0, 
-    })
+    });    
   }
 
   function updateQuantity(id, operation) {

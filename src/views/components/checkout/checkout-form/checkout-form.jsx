@@ -5,6 +5,7 @@ import { PaymentInfo } from "../payment-info/payment-info";
 import { PersonalInfo } from "../personal-info/personal-info";
 import { useNavigate } from "react-router-dom";
 import { useCart } from "../../../../app/context/cart/cart-context-hook";
+import { Bounce, toast } from "react-toastify";
 
 export function CheckoutForm() {
   const navigate = useNavigate();
@@ -25,6 +26,18 @@ export function CheckoutForm() {
     clearCart();
     reset();
     navigate('/');
+
+    toast.success('Pedido realizado com sucesso, confira seu e-mail', {
+      position: "top-right",
+      autoClose: 2000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+      transition: Bounce,
+    });
   };
 
   return (
