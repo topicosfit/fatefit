@@ -5,8 +5,6 @@ import { AiFillDelete } from "react-icons/ai";
 export function CartProducts() {
     const { cart, removeProductFromCart, updateQuantity } = useCart();
 
-    console.log('cart', cart);
-
     return (
         <div className="w-5/6">
             <table className="min-w-full bg-white">
