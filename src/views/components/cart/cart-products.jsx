@@ -3,7 +3,9 @@ import { formatPrice } from '../../utils/format-price';
 import { AiFillDelete } from "react-icons/ai";
 
 export function CartProducts() {
-    const { cart, removeProductFromCart } = useCart();
+    const { cart, removeProductFromCart, updateQuantity } = useCart();
+
+    console.log('cart', cart);
 
     return (
         <div className="w-5/6">
@@ -41,7 +43,35 @@ export function CartProducts() {
                                     px-4 
                                     text-center
                                 ">
-                                    {1}
+                                    <div className="
+                                        flex
+                                        gap-2
+                                        justify-center
+                                    ">
+                                        <button 
+                                            className="
+                                                bg-white
+                                                rounded-md
+                                                w-4
+                                            "
+                                            onClick={() => updateQuantity(item.id_product, '-')}
+                                        >
+                                            -
+                                        </button>
+                                        <span>
+                                            {item.quantity}
+                                        </span>
+                                        <button
+                                            className="
+                                                bg-white
+                                                rounded-md
+                                                w-4
+                                            "
+                                            onClick={() => updateQuantity(item.id_product, '+')}
+                                        >
+                                            +
+                                        </button>
+                                    </div>
                                 </td>
                                 <td className="
                                     py-2 

@@ -64,6 +64,57 @@ export function CartProvider({ children }) {
     })
   }
 
+  function updateQuantity(id, operation) {
+    const product = cart.products.find(product => product.id_product === id);
+    let updatedQuantity;
+    let updatedProducts;
+
+    if (operation === '-') {
+      updatedQuantity = product.quantity - 1;
+
+      if (updatedQuantity === 0) {
+        updatedProducts = cart.products.filter(product => product.id_product !== id);
+
+        setCart({
+          products: updatedProducts, 
+          total: 0, 
+        });
+
+        return;
+      }
+
+      updatedProducts = cart.products.map(product => {
+        if (product.id_product === id) {
+          return {
+            ...product, 
+            quantity: updatedQuantity, 
+          }
+        };
+      });
+
+      setCart({
+        products: updatedProducts, 
+        total: 0, 
+      });
+    } else {
+      updatedQuantity = product.quantity + 1;
+
+      updatedProducts = cart.products.map(product => {
+        if (product.id_product === id) {
+          return {
+            ...product, 
+            quantity: updatedQuantity, 
+          }
+        };
+      });
+
+      setCart({
+        products: updatedProducts, 
+        total: 0, 
+      });
+    };
+  }
+
   return (
     <CartContext.Provider value={{
       cart, 
@@ -71,6 +122,7 @@ export function CartProvider({ children }) {
       addProductToCart, 
       isCartLoading, 
       removeProductFromCart, 
+      updateQuantity, 
     }}>
       {children}
     </CartContext.Provider>
