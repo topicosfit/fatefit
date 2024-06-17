@@ -33,7 +33,10 @@ export function SearchBar() {
                     p-2 
                     rounded-r-lg 
                 "
-                onClick={() => handleSearchProduct(inputRef.current.value)}
+                onClick={() => {
+                    handleSearchProduct(inputRef.current.value);
+                    inputRef.current.value = '';
+                }}
             >
                 <AiOutlineSearch 
                     color="white"

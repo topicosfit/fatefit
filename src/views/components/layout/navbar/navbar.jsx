@@ -3,8 +3,10 @@ import { CartButton } from "./cart-button";
 import { SearchBar } from "./search-bar/search-bar";
 import logo from '../../../../assets/logo.png'
 import { useNavigate } from "react-router-dom";
+import { useProducts } from "../../../../app/context/products/products-context-hook";
 
 export function Navbar() {
+  const { handleSearchProduct } = useProducts();
   const navigate = useNavigate();
 
   return (
@@ -31,7 +33,10 @@ export function Navbar() {
       >
         <div 
           className="cursor-pointer"
-          onClick={() => navigate('/')}
+          onClick={() => {
+            navigate('/');
+            handleSearchProduct('');
+          }}
         >
           <img src={logo} height={200} width={200} />
         </div>
